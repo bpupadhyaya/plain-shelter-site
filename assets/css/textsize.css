@@ -1,17 +1,17 @@
 /* Text-size control: deliberately NOT converted to rem, so it keeps a fixed size while the page text scales. */
 /* Text size: "Aa 100%" button that opens an A-to-A slider (fixed small size so it never grows with the text) */
 .textsize { position: relative; margin-left: 12px; flex-shrink: 0; font-size: 13px; }
-.textsize > button { font: 700 13px/1 'Inter', sans-serif; color: var(--green-900); background: var(--green-100); border: 1px solid var(--line);
+.textsize > button { font: 700 13px/1 'Inter', sans-serif; color: #f7f3e8; background: transparent; border: 1.5px solid rgba(247,243,232,.75);
     border-radius: 999px; padding: 8px 12px; cursor: pointer; }
 .ts-panel { position: absolute; right: 0; top: calc(100% + 8px); width: 290px; background: #fff; border: 1px solid var(--line);
     border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; z-index: 70;
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; font: 600 13px/1.2 'Inter', sans-serif; }
 .ts-panel[hidden] { display: none; }
 .ts-a-small { font-size: 13px; } .ts-a-big { font-size: 28px; }
-.ts-panel input[type=range] { width: 100%; accent-color: var(--green-600); }
+.ts-panel input[type=range] { width: 100%; accent-color: var(--leaf); }
 .ts-row { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; }
-.ts-row strong { font-size: 20px; color: var(--green-900); }
-.ts-row button { font: 600 13px 'Inter', sans-serif; color: var(--green-700); background: none; border: 0; cursor: pointer; }
+.ts-row strong { font-size: 20px; color: var(--pine); }
+.ts-row button { font: 600 13px 'Inter', sans-serif; color: var(--leaf-deep); background: none; border: 0; cursor: pointer; }
 .ts-row button:disabled { opacity: .4; cursor: default; }
 @media (max-width: 1040px) { .textsize { margin-left: auto; } .mobile-menu-btn { margin-left: 8px; } }
 
