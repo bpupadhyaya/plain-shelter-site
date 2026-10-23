@@ -25,9 +25,35 @@
 </div></header>
 <main class="shell page"><p class="crumb"><a href="../">Home</a> &rsaquo; Privacy Policy</p><h1>Privacy Policy</h1><p class="meta">PlainShelter &middot; EqualInformation, LLC</p><p>PlainShelter has no accounts, no ads and no analytics. The shelter content lives on your device and works offline. The app does not collect or send personal data. If you open a citation while online, the page loads from its publisher like any web page. Purchases and subscriptions are handled by Apple or Google; we receive no payment details.</p><p>Questions: see <a href='../support/'>Support</a>.</p></main>
 <div class="feedback"><a href="mailto:contact@equalinformation.com?subject=PlainShelter%20feedback">Feedback</a></div>
-<footer class="foot"><div class="shell">
-  <nav aria-label="Footer"><a href="../">Home</a><a href="../privacy/">Privacy</a><a href="../disclaimer/">Safety disclaimer</a><a href="../support/">Support</a><a href="https://equalinformation.com">EqualInformation</a></nav>
-  <p>&copy; 2026 EqualInformation, LLC. PlainShelter gives general survival information from public-domain and open sources, not professional or emergency-service advice. In an emergency call your local emergency number.</p>
-</div></footer>
+<footer class="foot" id="foot">
+  <div class="shell foot-bar">
+    <nav aria-label="Footer"><a href="../">Home</a><a href="../privacy/">Privacy</a><a href="../disclaimer/">Safety disclaimer</a><a href="../support/">Support</a></nav>
+    <span class="foot-copy">&copy; 2026 EqualInformation, LLC</span>
+    <button type="button" class="foot-toggle" id="foot-toggle" aria-expanded="false" aria-controls="foot-more"><span id="foot-toggle-label">More</span> <span aria-hidden="true" id="foot-toggle-arrow">&#9652;</span></button>
+  </div>
+  <div class="foot-more" id="foot-more" hidden>
+    <div class="shell">
+      <nav aria-label="All links"><a href="../#ladder">The ladder</a><a href="../#how">How it works</a><a href="../#inside">Shelters</a><a href="../#sources">Sources</a><a href="../privacy/">Privacy Policy</a><a href="../disclaimer/">Safety disclaimer</a><a href="../support/">Support</a><a href="https://equalinformation.com">EqualInformation</a></nav>
+      <p>Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a></p>
+      <p>&copy; 2026 EqualInformation, LLC. All rights reserved.</p>
+      <p>PlainShelter gives general survival information from public-domain and open sources, not professional or emergency-service advice. In an emergency call your local emergency number first. <a href="../disclaimer/">Read the disclaimer.</a></p>
+      <p class="foot-fine">Apple, the Apple logo, and App Store are trademarks of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.getElementById('foot-toggle'), more = document.getElementById('foot-more');
+  var lab = document.getElementById('foot-toggle-label'), arr = document.getElementById('foot-toggle-arrow');
+  function set(open) {
+    more.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    lab.textContent = open ? 'Less' : 'More'; arr.innerHTML = open ? '&#9662;' : '&#9652;';
+    try { sessionStorage.setItem('footOpen', open ? '1' : '0'); } catch (e) {}
+  }
+  var saved = null; try { saved = sessionStorage.getItem('footOpen'); } catch (e) {}
+  set(saved === '1');
+  btn.addEventListener('click', function () { set(more.hidden); });
+})();
+</script>
 </body>
 </html>
